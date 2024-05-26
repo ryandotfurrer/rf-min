@@ -1,0 +1,30 @@
+---
+import Image from 'astro/components/Image.astro';
+import Header from '../layouts/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import profilePicture from '../assets/images/pfp-may-2024.webp'
+
+let headerTitle = 'About'
+let headerDescription = 'Learn more about me'
+---
+
+<Layout title="About" headerTitle={headerTitle} headerDescription={headerDescription}>
+	<Header headerTitle={headerTitle} headerDescription={headerDescription}/>
+	
+		<main>
+			<article class="space-y-[1em]">
+
+		<Image src={profilePicture} alt='Ryan Furrer' class='rounded-3xl max-w-full aspect-square object-cover object-top w-1/2' />
+
+		<h2>Lorem Ipsum</h2>
+		<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae impedit, eligendi rem facere ad fugiat.</p>
+		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae labore vero modi nisi, <a href="#">iusto</a> cupiditate porro id quod, adipisci tenetur nesciunt nostrum impedit, cum natus?</p>
+		<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem blanditiis similique sapiente deleniti vero eaque!</p>
+		<p>Lorem ipsum dolor sit amet.</p>
+		<h3>Lorem Ipsum</h3>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <a href="#">Eveniet officia rerum</a>, cum veniam enim totam vitae, dolor numquam illo sint ex. Ipsa iusto obcaecati unde, voluptas sequi dolorem nemo possimus illo, expedita commodi vel consectetur!</p>
+		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse reiciendis laborum rerum harum nihil sint.</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, eius. Natus doloribus suscipit reiciendis inventore excepturi amet? Itaque cumque, ad aut corporis <a href="#">minima enim vitae</a>.</p>
+	</article>
+	</main>
+</Layout>

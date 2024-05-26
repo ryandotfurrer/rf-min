@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply font-sans text-pretty text-base bg-neutral-50 text-neutral-950 px-4 pb-8 font-light dark:bg-neutral-950 dark:text-neutral-50;
+  * {
+    @apply min-w-0;
   }
 
   h1,
   h2,
   h3 {
-    @apply font-bold text-balance tracking-tight leading-tight dark:text-neutral-50 text-neutral-950;
+    @apply font-medium text-balance tracking-tight leading-tight dark:text-neutral-50 text-neutral-950;
   }
 
   h1 {
@@ -26,6 +26,29 @@
   }
 
   a {
-    @apply hover:underline text-neutral-500 hover:text-neutral-950 underline-offset-4 dark:hover:text-neutral-50;
+    @apply text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 underline-offset-4 dark:hover:text-neutral-50 transition-all duration-300;
+  }
+
+  image,
+  picture {
+    @apply rounded-lg max-w-full;
+  }
+
+  body {
+    @apply font-sans text-pretty text-base bg-neutral-100 text-neutral-950 pb-8 pt-4 px-4 md:px-8 md:pt-8 lg:pt-20 lg:px-20 font-light dark:bg-neutral-950 dark:text-neutral-50 max-w-4xl;
+  }
+
+  main {
+    @apply py-20;
+  }
+
+  article {
+    @apply text-neutral-600 dark:text-neutral-400;
+    p {
+      @apply leading-relaxed;
+    }
+    a {
+      @apply text-neutral-950 dark:text-neutral-50 hover:border-neutral-950 dark:hover:border-inherit border-b-2 border-transparent transition-all duration-300;
+    }
   }
 }
