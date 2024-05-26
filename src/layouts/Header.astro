@@ -10,7 +10,7 @@ let {headerTitle, headerDescription} = Astro.props;
 ---
 
 <header>
-  <h1 class='uppercase text-xl'>{headerTitle}</h1>
+  <h1 class='uppercase text-xl pb-[.5em]'>{headerTitle}</h1>
   <p>{headerDescription}</p>
   <slot name='extraHeaderText' />
   <Nav />
