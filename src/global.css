@@ -26,7 +26,7 @@
   }
 
   a {
-    @apply text-neutral-500 dark:text-neutral-400 hover:text-neutral-950 underline-offset-4 dark:hover:text-neutral-50 transition-all duration-300;
+    @apply text-neutral-500 dark:text-neutral-400 hover:text-neutral-950 underline-offset-4 dark:hover:text-neutral-50 transition-colors duration-300;
   }
 
   ul[role="list"],
@@ -62,7 +62,7 @@
       @apply leading-relaxed;
     }
     a {
-      @apply text-neutral-950 dark:text-neutral-50 hover:border-neutral-950 dark:hover:border-inherit border-b-2 border-transparent transition-all duration-300;
+      @apply text-neutral-950 dark:text-neutral-50 hover:border-neutral-950 dark:hover:border-inherit border-b-2 border-transparent transition-colors duration-300;
     }
   }
 }

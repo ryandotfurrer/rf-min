@@ -29,10 +29,10 @@ let { title} = Astro.props;
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
-	<body transition:animate={fade({duration: '300ms'})}>
+	<body>
 		<a href="/">
-		<Image class='w-10 md:w-20 mb-4 rounded-none' src={logo} alt='Logo' transition:persist /></a>
-		<NavHorizontal />
+		<Image class='w-10 md:w-20 mb-4 rounded-none' src={logo} alt='Logo' /></a>
+		<NavHorizontal  />
 		<slot />
 		<Footer />
 	</body>
