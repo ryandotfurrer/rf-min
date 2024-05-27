@@ -1,0 +1,28 @@
+# Ignore node_modules and other dependencies
+/node_modules/
+
+# Ignore build output
+/build/
+/dist/
+/public/
+
+# Ignore coverage reports
+/coverage/
+
+# Ignore IDE temporary files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bak
+*.tmp
+*.log
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+__pycache__/
+*.env
+.nvmrc
+.DS_Store
+Thumbs.db

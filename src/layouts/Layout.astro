@@ -1,6 +1,10 @@
 ---
+import { ViewTransitions, fade } from 'astro:transitions';
 import '../global.css'
 import Footer from '../components/Footer.astro';
+import logo from '../../public/logo.svg'
+import Image from 'astro/components/Image.astro';
+import NavHorizontal from '../components/NavHorizontal.astro';
 
 interface Props {
 	title: string;
@@ -23,8 +27,12 @@ let { title} = Astro.props;
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
-	<body>
+	<body transition:animate={fade({duration: '300ms'})}>
+		<a href="/">
+		<Image class='w-10 md:w-20 mb-4 rounded-none' src={logo} alt='Logo' transition:persist /></a>
+		<NavHorizontal />
 		<slot />
 		<Footer />
 	</body>
