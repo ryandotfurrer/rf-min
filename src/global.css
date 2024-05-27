@@ -26,24 +26,38 @@
   }
 
   a {
-    @apply text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 underline-offset-4 dark:hover:text-neutral-50 transition-all duration-300;
+    @apply text-neutral-500 dark:text-neutral-400 hover:text-neutral-950 underline-offset-4 dark:hover:text-neutral-50 transition-all duration-300;
   }
 
-  image,
+  ul[role="list"],
+  ol[role="list"] {
+    @apply list-none pl-0;
+  }
+
+  ol,
+  ul {
+    @apply pl-[1em];
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  img,
   picture {
-    @apply rounded-lg max-w-full;
+    @apply rounded-3xl max-w-full mb-[2em];
   }
 
   body {
     @apply font-sans text-pretty text-base bg-neutral-100 text-neutral-950 pb-8 pt-4 px-4 md:px-8 md:pt-8 lg:pt-20 lg:px-20 font-light dark:bg-neutral-950 dark:text-neutral-50 max-w-4xl;
   }
 
-  main {
-    @apply py-20;
-  }
-
   article {
-    @apply text-neutral-600 dark:text-neutral-400;
+    @apply text-neutral-600 dark:text-neutral-400 space-y-[1em];
     p {
       @apply leading-relaxed;
     }

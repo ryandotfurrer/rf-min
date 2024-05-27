@@ -1,0 +1,25 @@
+---
+import '../global.css'
+import Layout from './Layout.astro';
+import MarkdownPostHeaderLayout from './MarkdownPostHeaderLayout.astro'
+import NavHorizontal from '../components/NavHorizontal.astro';
+const { frontmatter } = Astro.props;
+---
+<Layout title={frontmatter.title}>
+  <MarkdownPostHeaderLayout headerTitle={frontmatter.title} headerDescription={frontmatter.description}>
+    <div slot='extraHeaderText' class='space-y-10 pt-3'>
+      <div id='blog-header-text'>
+        <p class='text-xs'>Written by {frontmatter.author}</p>
+        <p class='text-xs'>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
+      </div>
+      <div id="blog-header-image">
+        <img src={frontmatter.image.url} width="5%" alt={frontmatter.image.alt} class='w-full'/>
+      </div>
+    </div>
+  </MarkdownPostHeaderLayout>
+  <main>
+    <article>
+      <slot />
+    </article>
+  </main>
+</Layout>

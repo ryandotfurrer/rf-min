@@ -1,0 +1,33 @@
+---
+import BlogPost from '../../components/BlogPost.astro';
+import Layout from '../../layouts/Layout.astro';
+import MarkdownPostHeaderLayout from '../../layouts/MarkdownPostHeaderLayout.astro';
+import NavHorizontal from '../../components/NavHorizontal.astro';
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob('../content/*.md')
+
+  const uniqueTags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+
+  return uniqueTags.map((tag) => {
+  const filteredPosts = allPosts.filter((post) => post.frontmatter.tags.includes(tag));
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+});
+}
+
+const { tag } = Astro.params;
+const {posts} = Astro.props;
+---
+<Layout title={tag}>
+  <MarkdownPostHeaderLayout headerTitle=`Posts tagged with ${tag}` />
+
+  <main class='space-y-[1em] pt-10'>
+  <ul role='list' class='space-y-[1em]'>
+    {posts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} pubDate={post.frontmatter.pubDate.toString().slice(0,10)} />)}
+
+  </ul>
+</main>
+</Layout>

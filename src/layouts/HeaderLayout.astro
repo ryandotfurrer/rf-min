@@ -2,15 +2,15 @@
 import Nav from "../components/Nav.astro";
 
 interface HeaderProps {
-  headerTitle: string,
+  headerTitle?: string,
   headerDescription?: string,  
 }
 
 let {headerTitle, headerDescription} = Astro.props;
 ---
 
-<header>
-  <h1 class='uppercase text-xl pb-[.5em]'>{headerTitle}</h1>
+<header class='pb-10'>
+  <h1 class='uppercase text-xl pb-1'>{headerTitle}</h1>
   <p>{headerDescription}</p>
   <slot name='extraHeaderText' />
   <Nav />

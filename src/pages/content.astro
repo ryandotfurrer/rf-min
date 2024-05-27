@@ -1,0 +1,20 @@
+---
+import BlogPost from '../components/BlogPost.astro';
+import HeaderLayout from '../layouts/HeaderLayout.astro';
+import Layout from '../layouts/Layout.astro';
+
+const allPosts = await Astro.glob('../pages/content/*.md');
+let headerTitle = 'Content'
+let headerDescription = 'This is where you can find my blogs, speaking appearances like podcasts, and more.'
+---
+
+<Layout title="Content" headerTitle={headerTitle} headerDescription={headerDescription}>
+	<HeaderLayout headerTitle={headerTitle} headerDescription={headerDescription}/>
+	
+		<main>
+			<ul role='list'>
+				{allPosts.map((post) => 
+				<BlogPost url={post.url} title={post.frontmatter.title} pubDate={post.frontmatter.pubDate.toString().slice(0,10)} />)}
+			</ul>
+	</main>
+</Layout>

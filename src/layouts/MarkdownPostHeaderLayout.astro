@@ -1,0 +1,18 @@
+---
+import NavHorizontal from "../components/NavHorizontal.astro";
+
+
+interface HeaderProps {
+  headerTitle?: string,
+  headerDescription?: string,  
+}
+
+let {headerTitle, headerDescription} = Astro.props;
+---
+
+<header>
+  <NavHorizontal />
+  <h1 class='uppercase text-xl pb-1'>{headerTitle}</h1>
+  <p>{headerDescription}</p>
+  <slot name='extraHeaderText' />
+</header>

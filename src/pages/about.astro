@@ -1,6 +1,6 @@
 ---
 import Image from 'astro/components/Image.astro';
-import Header from '../layouts/Header.astro';
+import HeaderLayout from '../layouts/HeaderLayout.astro';
 import Layout from '../layouts/Layout.astro';
 import profilePicture from '../assets/images/pfp-may-2024.webp'
 
@@ -9,12 +9,12 @@ let headerDescription = 'Learn more about me'
 ---
 
 <Layout title="About" headerTitle={headerTitle} headerDescription={headerDescription}>
-	<Header headerTitle={headerTitle} headerDescription={headerDescription}/>
+	<HeaderLayout headerTitle={headerTitle} headerDescription={headerDescription}/>
 	
 		<main>
 			<article class="space-y-[1em]">
 
-		<Image src={profilePicture} alt='Ryan Furrer' class='rounded-3xl max-w-full aspect-square object-cover object-top w-1/2' />
+		<!-- <Image src={profilePicture} alt='Ryan Furrer' class='aspect-square object-cover object-top w-1/2' /> -->
 
 		<h2>Lorem Ipsum</h2>
 		<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae impedit, eligendi rem facere ad fugiat.</p>
