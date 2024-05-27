@@ -2,7 +2,6 @@
 import BlogPost from '../../components/BlogPost.astro';
 import Layout from '../../layouts/Layout.astro';
 import MarkdownPostHeaderLayout from '../../layouts/MarkdownPostHeaderLayout.astro';
-import NavHorizontal from '../../components/NavHorizontal.astro';
 
 export async function getStaticPaths() {
   const allPosts = await Astro.glob('../content/*.md')

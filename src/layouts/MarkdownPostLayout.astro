@@ -2,8 +2,8 @@
 import '../global.css'
 import Layout from './Layout.astro';
 import MarkdownPostHeaderLayout from './MarkdownPostHeaderLayout.astro'
-import NavHorizontal from '../components/NavHorizontal.astro';
-const { frontmatter } = Astro.props;
+
+const { frontmatter} = Astro.props;
 ---
 <Layout title={frontmatter.title}>
   <MarkdownPostHeaderLayout headerTitle={frontmatter.title} headerDescription={frontmatter.description}>
@@ -21,5 +21,11 @@ const { frontmatter } = Astro.props;
     <article>
       <slot />
     </article>
+
+    <div class='flex flex-wrap gap-4 text-xs pt-10'>
+      {frontmatter.tags.map((tag) => (
+        <p><a href={`/tags/${tag}`} class='border px-[1em] py-[.5em] rounded-3xl hover:bg-neutral-200 dark:hover:bg-neutral-800'>{tag}</a></p>
+      ))}
+    </div>
   </main>
 </Layout>
