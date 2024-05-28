@@ -12,9 +12,9 @@ let headerDescription = 'This is where you can find my blogs, speaking appearanc
 	<HeaderLayout headerTitle={headerTitle} headerDescription={headerDescription}/>
 	
 		<main>
-			<ul role='list'>
+			<ul role='list' class='flex flex-col gap-4'>
 				{allPosts.map((post) => 
-				<BlogPost url={post.url} title={post.frontmatter.title} pubDate={post.frontmatter.pubDate.toString().slice(0,10)} />)}
+				<BlogPost url={post.url} title={post.frontmatter.title} pubDate={post.frontmatter.pubDate.toString().slice(0,10)} description={post.frontmatter.description} />)}
 			</ul>
 	</main>
 </Layout>

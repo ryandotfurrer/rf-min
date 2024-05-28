@@ -2,14 +2,12 @@
 import HeaderLayout from '../layouts/HeaderLayout.astro';
 import Layout from '../layouts/Layout.astro';
 
-let headerTitle = 'Ryan Furrer'
+let headerTitle = 'Web developer, writer, and streamer.'
+let headerDescription = `I'm Ryan Furrer, a front-end web developer based on Long Island, New York. I'm currently a UX engineer at Gridiron Survior, where we change the way football surivor leagues are played.`
 ---
 
-<Layout title="Ryan Furrer" headerTitle={headerTitle}>
-		<HeaderLayout headerTitle={headerTitle}>
-			<p slot='extraHeaderText' class='text-balance'>
-				I'm a NY based <a href="#">front-end web developer</a>, <a href="#">writer</a>, and <a href="#">streamer</a>. Right now I am working at <a href="#">Gridiron Survivor</a> as a UX Engineer and am looking for my next role.
-			</p>
+<Layout title="Ryan Furrer">
+		<HeaderLayout headerTitle={headerTitle} headerDescription={headerDescription}>
 		</HeaderLayout>
 		<main>
 		</main>

@@ -9,10 +9,10 @@ export async function getStaticPaths() {
   const uniqueTags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
 
   return uniqueTags.map((tag) => {
-  const filteneutralPosts = allPosts.filter((post) => post.frontmatter.tags.includes(tag));
+  const filtezincPosts = allPosts.filter((post) => post.frontmatter.tags.includes(tag));
     return {
       params: { tag },
-      props: { posts: filteneutralPosts },
+      props: { posts: filtezincPosts },
     };
 });
 }
@@ -25,7 +25,8 @@ const {posts} = Astro.props;
 
   <main class='space-y-[1em] pt-10'>
   <ul role='list' class='space-y-[1em]'>
-    {posts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} pubDate={post.frontmatter.pubDate.toString().slice(0,10)} />)}
+    {posts.map((post) => 
+      <BlogPost url={post.url} title={post.frontmatter.title} pubDate={post.frontmatter.pubDate.toString().slice(0,10)} description={post.frontmatter.description} />)}
 
   </ul>
 </main>

@@ -10,7 +10,7 @@
   h1,
   h2,
   h3 {
-    @apply font-medium text-balance tracking-tight leading-tight dark:text-neutral-50 text-neutral-950;
+    @apply text-balance tracking-tight dark:text-zinc-100 text-zinc-800 font-bold;
   }
 
   h1 {
@@ -26,7 +26,7 @@
   }
 
   a {
-    @apply text-neutral-500 dark:text-neutral-400 hover:text-neutral-950 underline-offset-4 dark:hover:text-neutral-50 transition-colors duration-300;
+    @apply underline decoration-zinc-300 hover:decoration-zinc-600 transition-colors font-medium hover:text-zinc-800 dark:hover:text-zinc-50 dark:hover:decoration-zinc-50 dark:decoration-zinc-600;
   }
 
   ul[role="list"],
@@ -53,16 +53,10 @@
   }
 
   body {
-    @apply font-sans text-pretty text-base bg-neutral-100 text-neutral-950 pb-8 pt-4 px-4 md:px-8 md:pt-8 lg:pt-20 lg:px-20 font-light dark:bg-neutral-900 dark:text-neutral-50 max-w-4xl lg:mx-auto;
+    @apply flex h-full font-sans text-pretty text-base text-zinc-600 dark:text-zinc-400 bg-zinc-100 dark:bg-black leading-relaxed;
   }
 
-  article {
-    @apply text-neutral-600 dark:text-neutral-400 space-y-[1em];
-    p {
-      @apply leading-relaxed;
-    }
-    a {
-      @apply text-neutral-950 dark:text-neutral-50 hover:border-neutral-950 dark:hover:border-inherit border-b-2 border-transparent transition-colors duration-300;
-    }
+  .body-inner-container {
+    @apply bg-white dark:bg-zinc-900 flex w-full flex-col pb-8 pt-4 px-4 md:px-8 md:pt-8 lg:pt-20 lg:px-20 max-w-4xl lg:mx-auto h-full;
   }
 }

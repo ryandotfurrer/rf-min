@@ -1,13 +1,11 @@
 ---
-const { pubDate, title, url } = Astro.props;
+const { description, pubDate, title, url } = Astro.props;
 ---
 
-<li>
-  <a href={url}>
-    <div>
-      <p>
-    {title}</p>
-      <p class='text-xs'>{pubDate}</p>
-    </div>
+<article class='sm:rounded-2xl inset group flex flex-col md:hover:bg-zinc-50 md:dark:hover:bg-zinc-800 p-6 transition-all md:scale-95 md:hover:scale-100'>
+  <a href={url} class='no-underline text-zinc-400 hover:text-zinc-400 space-y-[1em]'>
+    <p class='text-sm dark:text-zinc-500 font-normal dark:border-zinc-700 border-l-2 pl-3'>{pubDate}</p>
+    <h2 class='text-base font-semibold'>{title}</h2>
+    <p class="text-sm font-normal text-zinc-600 dark:text-zinc-400">{description}</p>
   </a>
-</li>
+</article>

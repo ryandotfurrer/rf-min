@@ -30,10 +30,12 @@ let { title} = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body>
+		<div class="body-inner-container">
 		<a href="/">
 		<Image class='w-10 md:w-20 mb-4 rounded-none' src={logo} alt='Logo' /></a>
 		<NavHorizontal  />
 		<slot />
 		<Footer />
+	</div>
 	</body>
 </html>
